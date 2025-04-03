@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "Adafruit_SSD1306_STM32.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
