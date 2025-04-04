@@ -22,9 +22,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
-#include "fonts.h"
-#include "ssd1306.h"
-
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
