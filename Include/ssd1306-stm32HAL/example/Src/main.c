@@ -6,12 +6,13 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2025 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
@@ -22,6 +23,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "ssd1306.h"
+#include "fonts.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +35,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -65,7 +68,6 @@ static void MX_I2C1_Init(void);
   */
 int main(void)
 {
-
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -91,6 +93,34 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  // Init lcd using one of the stm32HAL i2c typedefs
+  if (ssd1306_Init(&hi2c1) != 0) {
+    Error_Handler();
+  }
+  HAL_Delay(1000);
+
+  ssd1306_Fill(Black);
+  ssd1306_UpdateScreen(&hi2c1);
+
+  HAL_Delay(1000);
+
+  // Write data to local screenbuffer
+  ssd1306_SetCursor(0, 0);
+  ssd1306_WriteString("ssd1306", Font_11x18, White);
+
+  ssd1306_SetCursor(0, 36);
+  ssd1306_WriteString("4ilo", Font_11x18, White);
+
+  // Draw rectangle on screen
+  for (uint8_t i=0; i<28; i++) {
+      for (uint8_t j=0; j<64; j++) {
+          ssd1306_DrawPixel(100+i, 0+j, White);
+      }
+  }
+
+  // Copy all data from local screenbuffer to the screen
+  ssd1306_UpdateScreen(&hi2c1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,31 +143,36 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
-  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+  RCC_OscInitStruct.PLL.PLLM = 8;
+  RCC_OscInitStruct.PLL.PLLN = 192;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLQ = 8;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
   }
-
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }
@@ -159,7 +194,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 400000;
+  hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -184,16 +219,22 @@ static void MX_I2C1_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(Led_red_GPIO_Port, Led_red_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : Led_red_Pin */
+  GPIO_InitStruct.Pin = Led_red_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(Led_red_GPIO_Port, &GPIO_InitStruct);
+
 }
 
 /* USER CODE BEGIN 4 */
@@ -211,6 +252,11 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+      HAL_GPIO_TogglePin(Led_red_GPIO_Port, Led_red_Pin);
+      for (int i=0; i<10000000; i++) {
+          __asm__("nop");
+      }
+
   }
   /* USER CODE END Error_Handler_Debug */
 }
@@ -231,3 +277,5 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
