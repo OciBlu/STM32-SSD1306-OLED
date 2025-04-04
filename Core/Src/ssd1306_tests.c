@@ -216,7 +216,6 @@ void ssd1306_TestFonts3() {
 
 void ssd1306_TestFPS() {
     ssd1306_Fill(White);
-   
     uint32_t start = HAL_GetTick();
     uint32_t end = start;
     int fps = 0;
