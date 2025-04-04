@@ -22,6 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "ssd1306.h"
+#include "ssd1306_tests.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,7 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+  ssd1306_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -98,7 +101,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    ssd1306_TestAll();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
