@@ -24,8 +24,8 @@ _BEGIN_STD_C
 #elif defined(STM32F1)
 #include "stm32f1xx_hal.h"
 #elif defined(STM32F4)
-//#include "stm32f4xx_hal.h"
-//#include "stm32f4xx_hal_gpio.h"
+#include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_gpio.h"
 #elif defined(STM32L0)
 #include "stm32l0xx_hal.h"
 #elif defined(STM32L1)
