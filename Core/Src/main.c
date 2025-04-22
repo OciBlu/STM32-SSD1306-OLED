@@ -21,6 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "fonts.h"
+#include "ssd1306.h"
 
 /* USER CODE END Includes */
 
@@ -94,6 +96,17 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  SSD1306_Init();
+  char snum[5];
+  /*
+  SSD1306_GotoXY (0,0);
+  SSD1306_Puts ("Oci", &Font_11x18, 1);
+  SSD1306_GotoXY (0, 30);
+  SSD1306_Puts ("Blu", &Font_11x18, 1);
+  SSD1306_UpdateScreen();
+  HAL_Delay (5000);
+  SSD1306_Clear();
+  */
   
   /* USER CODE END 2 */
 
@@ -102,6 +115,37 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    SSD1306_GotoXY (0,0);
+    SSD1306_Puts ("Oci", &Font_11x18, 1);
+    SSD1306_GotoXY (0, 30);
+    SSD1306_Puts ("Blu", &Font_11x18, 1);
+    SSD1306_UpdateScreen();
+    HAL_Delay (5000);
+    SSD1306_Clear();
+    HAL_Delay (3000);
+    /*
+      for ( int x = 1; x <= 10000 ; x++ )
+	  {
+		  itoa(x, snum, 10);
+		  SSD1306_GotoXY (0, 30);
+		  SSD1306_Puts ("             ", &Font_16x26, 1);
+		  SSD1306_UpdateScreen();
+		  if(x < 10) {
+			  SSD1306_GotoXY (53, 30);  // 1 DIGIT
+		  }
+		  else if (x < 100 ) {
+			  SSD1306_GotoXY (45, 30);  // 2 DIGITS
+		  }
+		  else if (x < 1000 ) {
+			  SSD1306_GotoXY (37, 30);  // 3 DIGITS
+		  }
+		  else {
+			  SSD1306_GotoXY (30, 30);  // 4 DIGIS
+		  }
+		  SSD1306_Puts (snum, &Font_16x26, 1);
+		  SSD1306_UpdateScreen();
+		  HAL_Delay (500);
+	  }*/
 
     /* USER CODE BEGIN 3 */
   }
