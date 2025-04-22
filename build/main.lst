@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccxuAkrz.s 			page 1
+ARM GAS  /tmp/ccIQ2kco.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
   31:Core/Src/main.c **** 
   32:Core/Src/main.c **** /* USER CODE END PTD */
   33:Core/Src/main.c **** 
-ARM GAS  /tmp/ccxuAkrz.s 			page 2
+ARM GAS  /tmp/ccIQ2kco.s 			page 2
 
 
   34:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
@@ -111,14 +111,14 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
   81:Core/Src/main.c ****   HAL_Init();
   82:Core/Src/main.c **** 
   83:Core/Src/main.c ****   /* USER CODE BEGIN Init */
-  84:Core/Src/main.c **** 
+  84:Core/Src/main.c ****   HAL_Delay(100);
   85:Core/Src/main.c ****   /* USER CODE END Init */
   86:Core/Src/main.c **** 
   87:Core/Src/main.c ****   /* Configure the system clock */
   88:Core/Src/main.c ****   SystemClock_Config();
   89:Core/Src/main.c **** 
   90:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-ARM GAS  /tmp/ccxuAkrz.s 			page 3
+ARM GAS  /tmp/ccIQ2kco.s 			page 3
 
 
   91:Core/Src/main.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  145:Core/Src/main.c **** 		  SSD1306_Puts (snum, &Font_16x26, 1);
  146:Core/Src/main.c **** 		  SSD1306_UpdateScreen();
  147:Core/Src/main.c **** 		  HAL_Delay (500);
-ARM GAS  /tmp/ccxuAkrz.s 			page 4
+ARM GAS  /tmp/ccIQ2kco.s 			page 4
 
 
  148:Core/Src/main.c **** 	  }*/
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  202:Core/Src/main.c ****   /* USER CODE BEGIN I2C1_Init 0 */
  203:Core/Src/main.c **** 
  204:Core/Src/main.c ****   /* USER CODE END I2C1_Init 0 */
-ARM GAS  /tmp/ccxuAkrz.s 			page 5
+ARM GAS  /tmp/ccIQ2kco.s 			page 5
 
 
  205:Core/Src/main.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  259:Core/Src/main.c **** }
  260:Core/Src/main.c **** 
  261:Core/Src/main.c **** /**
-ARM GAS  /tmp/ccxuAkrz.s 			page 6
+ARM GAS  /tmp/ccIQ2kco.s 			page 6
 
 
  262:Core/Src/main.c ****   * @brief GPIO Initialization Function
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
   67              		.loc 1 274 3 view .LVU14
   68              		.loc 1 274 3 view .LVU15
   69 0028 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/ccxuAkrz.s 			page 7
+ARM GAS  /tmp/ccIQ2kco.s 			page 7
 
 
   70 002a 42F00802 		orr	r2, r2, #8
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  292:Core/Src/main.c ****   __disable_irq();
  109              		.loc 1 292 3 view .LVU21
  110              	.LBB7:
-ARM GAS  /tmp/ccxuAkrz.s 			page 8
+ARM GAS  /tmp/ccIQ2kco.s 			page 8
 
 
  111              	.LBI7:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
   53:Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h **** /**
   54:Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
   55:Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
-ARM GAS  /tmp/ccxuAkrz.s 			page 9
+ARM GAS  /tmp/ccIQ2kco.s 			page 9
 
 
   56:Drivers/CMSIS/Device/ST/STM32F1xx/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  148              		.cfi_offset 3, -8
  149              		.cfi_offset 14, -4
  209:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 400000;
-ARM GAS  /tmp/ccxuAkrz.s 			page 10
+ARM GAS  /tmp/ccIQ2kco.s 			page 10
 
 
  150              		.loc 1 209 3 view .LVU28
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  185              	.LVL0:
  218:Core/Src/main.c ****   {
  186              		.loc 1 218 6 view .LVU48
-ARM GAS  /tmp/ccxuAkrz.s 			page 11
+ARM GAS  /tmp/ccIQ2kco.s 			page 11
 
 
  187 0024 00B9     		cbnz	r0, .L10
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  246:Core/Src/main.c ****   huart1.Init.Parity = UART_PARITY_NONE;
  234              		.loc 1 246 3 is_stmt 1 view .LVU58
  246:Core/Src/main.c ****   huart1.Init.Parity = UART_PARITY_NONE;
-ARM GAS  /tmp/ccxuAkrz.s 			page 12
+ARM GAS  /tmp/ccIQ2kco.s 			page 12
 
 
  235              		.loc 1 246 24 is_stmt 0 view .LVU59
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  278              	SystemClock_Config:
  279              	.LFB64:
  160:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-ARM GAS  /tmp/ccxuAkrz.s 			page 13
+ARM GAS  /tmp/ccIQ2kco.s 			page 13
 
 
  280              		.loc 1 160 1 view -0
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  321 0028 0D92     		str	r2, [sp, #52]
  172:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
  322              		.loc 1 172 3 is_stmt 1 view .LVU87
-ARM GAS  /tmp/ccxuAkrz.s 			page 14
+ARM GAS  /tmp/ccIQ2kco.s 			page 14
 
 
  172:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  359              	.LVL6:
  188:Core/Src/main.c ****   {
  360              		.loc 1 188 6 view .LVU106
-ARM GAS  /tmp/ccxuAkrz.s 			page 15
+ARM GAS  /tmp/ccIQ2kco.s 			page 15
 
 
  361 0054 20B9     		cbnz	r0, .L24
@@ -895,153 +895,161 @@ ARM GAS  /tmp/ccxuAkrz.s 			page 1
  409              		.loc 1 81 3 view .LVU111
  410 0002 FFF7FEFF 		bl	HAL_Init
  411              	.LVL9:
+  84:Core/Src/main.c ****   /* USER CODE END Init */
+ 412              		.loc 1 84 3 view .LVU112
+ 413 0006 6420     		movs	r0, #100
+ARM GAS  /tmp/ccIQ2kco.s 			page 16
+
+
+ 414 0008 FFF7FEFF 		bl	HAL_Delay
+ 415              	.LVL10:
   88:Core/Src/main.c **** 
- 412              		.loc 1 88 3 view .LVU112
- 413 0006 FFF7FEFF 		bl	SystemClock_Config
-ARM GAS  /tmp/ccxuAkrz.s 			page 16
-
-
- 414              	.LVL10:
+ 416              		.loc 1 88 3 view .LVU113
+ 417 000c FFF7FEFF 		bl	SystemClock_Config
+ 418              	.LVL11:
   95:Core/Src/main.c ****   MX_I2C1_Init();
- 415              		.loc 1 95 3 view .LVU113
- 416 000a FFF7FEFF 		bl	MX_GPIO_Init
- 417              	.LVL11:
+ 419              		.loc 1 95 3 view .LVU114
+ 420 0010 FFF7FEFF 		bl	MX_GPIO_Init
+ 421              	.LVL12:
   96:Core/Src/main.c ****   MX_USART1_UART_Init();
- 418              		.loc 1 96 3 view .LVU114
- 419 000e FFF7FEFF 		bl	MX_I2C1_Init
- 420              	.LVL12:
+ 422              		.loc 1 96 3 view .LVU115
+ 423 0014 FFF7FEFF 		bl	MX_I2C1_Init
+ 424              	.LVL13:
   97:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 421              		.loc 1 97 3 view .LVU115
- 422 0012 FFF7FEFF 		bl	MX_USART1_UART_Init
- 423              	.LVL13:
+ 425              		.loc 1 97 3 view .LVU116
+ 426 0018 FFF7FEFF 		bl	MX_USART1_UART_Init
+ 427              	.LVL14:
   99:Core/Src/main.c ****   char snum[5];
- 424              		.loc 1 99 3 view .LVU116
- 425 0016 FFF7FEFF 		bl	SSD1306_Init
- 426              	.LVL14:
- 427              	.L26:
+ 428              		.loc 1 99 3 view .LVU117
+ 429 001c FFF7FEFF 		bl	SSD1306_Init
+ 430              	.LVL15:
+ 431              	.L26:
  100:Core/Src/main.c ****   /*
- 428              		.loc 1 100 3 discriminator 1 view .LVU117
+ 432              		.loc 1 100 3 discriminator 1 view .LVU118
  115:Core/Src/main.c ****   {
- 429              		.loc 1 115 3 discriminator 1 view .LVU118
+ 433              		.loc 1 115 3 discriminator 1 view .LVU119
  118:Core/Src/main.c ****     SSD1306_Puts ("Oci", &Font_11x18, 1);
- 430              		.loc 1 118 5 discriminator 1 view .LVU119
- 431 001a 0021     		movs	r1, #0
- 432 001c 0846     		mov	r0, r1
- 433 001e FFF7FEFF 		bl	SSD1306_GotoXY
- 434              	.LVL15:
+ 434              		.loc 1 118 5 discriminator 1 view .LVU120
+ 435 0020 0021     		movs	r1, #0
+ 436 0022 0846     		mov	r0, r1
+ 437 0024 FFF7FEFF 		bl	SSD1306_GotoXY
+ 438              	.LVL16:
  119:Core/Src/main.c ****     SSD1306_GotoXY (0, 30);
- 435              		.loc 1 119 5 discriminator 1 view .LVU120
- 436 0022 0E4C     		ldr	r4, .L28
- 437 0024 0122     		movs	r2, #1
- 438 0026 2146     		mov	r1, r4
- 439 0028 0D48     		ldr	r0, .L28+4
- 440 002a FFF7FEFF 		bl	SSD1306_Puts
- 441              	.LVL16:
+ 439              		.loc 1 119 5 discriminator 1 view .LVU121
+ 440 0028 0D4C     		ldr	r4, .L28
+ 441 002a 0122     		movs	r2, #1
+ 442 002c 2146     		mov	r1, r4
+ 443 002e 0D48     		ldr	r0, .L28+4
+ 444 0030 FFF7FEFF 		bl	SSD1306_Puts
+ 445              	.LVL17:
  120:Core/Src/main.c ****     SSD1306_Puts ("Blu", &Font_11x18, 1);
- 442              		.loc 1 120 5 discriminator 1 view .LVU121
- 443 002e 1E21     		movs	r1, #30
- 444 0030 0020     		movs	r0, #0
- 445 0032 FFF7FEFF 		bl	SSD1306_GotoXY
- 446              	.LVL17:
+ 446              		.loc 1 120 5 discriminator 1 view .LVU122
+ 447 0034 1E21     		movs	r1, #30
+ 448 0036 0020     		movs	r0, #0
+ 449 0038 FFF7FEFF 		bl	SSD1306_GotoXY
+ 450              	.LVL18:
  121:Core/Src/main.c ****     SSD1306_UpdateScreen();
- 447              		.loc 1 121 5 discriminator 1 view .LVU122
- 448 0036 0122     		movs	r2, #1
- 449 0038 2146     		mov	r1, r4
- 450 003a 0A48     		ldr	r0, .L28+8
- 451 003c FFF7FEFF 		bl	SSD1306_Puts
- 452              	.LVL18:
+ 451              		.loc 1 121 5 discriminator 1 view .LVU123
+ 452 003c 0122     		movs	r2, #1
+ 453 003e 2146     		mov	r1, r4
+ 454 0040 0948     		ldr	r0, .L28+8
+ 455 0042 FFF7FEFF 		bl	SSD1306_Puts
+ 456              	.LVL19:
  122:Core/Src/main.c ****     HAL_Delay (5000);
- 453              		.loc 1 122 5 discriminator 1 view .LVU123
- 454 0040 FFF7FEFF 		bl	SSD1306_UpdateScreen
- 455              	.LVL19:
- 123:Core/Src/main.c ****     SSD1306_Clear();
- 456              		.loc 1 123 5 discriminator 1 view .LVU124
- 457 0044 41F28830 		movw	r0, #5000
- 458 0048 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  /tmp/ccxuAkrz.s 			page 17
+ 457              		.loc 1 122 5 discriminator 1 view .LVU124
+ 458 0046 FFF7FEFF 		bl	SSD1306_UpdateScreen
+ARM GAS  /tmp/ccIQ2kco.s 			page 17
 
 
  459              	.LVL20:
+ 123:Core/Src/main.c ****     SSD1306_Clear();
+ 460              		.loc 1 123 5 discriminator 1 view .LVU125
+ 461 004a 41F28830 		movw	r0, #5000
+ 462 004e FFF7FEFF 		bl	HAL_Delay
+ 463              	.LVL21:
  124:Core/Src/main.c ****     HAL_Delay (3000);
- 460              		.loc 1 124 5 discriminator 1 view .LVU125
- 461 004c FFF7FEFF 		bl	SSD1306_Clear
- 462              	.LVL21:
- 125:Core/Src/main.c ****     /*
- 463              		.loc 1 125 5 discriminator 1 view .LVU126
- 464 0050 40F6B830 		movw	r0, #3000
- 465 0054 FFF7FEFF 		bl	HAL_Delay
+ 464              		.loc 1 124 5 discriminator 1 view .LVU126
+ 465 0052 FFF7FEFF 		bl	SSD1306_Clear
  466              	.LVL22:
+ 125:Core/Src/main.c ****     /*
+ 467              		.loc 1 125 5 discriminator 1 view .LVU127
+ 468 0056 40F6B830 		movw	r0, #3000
+ 469 005a FFF7FEFF 		bl	HAL_Delay
+ 470              	.LVL23:
  115:Core/Src/main.c ****   {
- 467              		.loc 1 115 9 discriminator 1 view .LVU127
- 468 0058 DFE7     		b	.L26
- 469              	.L29:
- 470 005a 00BF     		.align	2
- 471              	.L28:
- 472 005c 00000000 		.word	Font_11x18
- 473 0060 00000000 		.word	.LC0
- 474 0064 04000000 		.word	.LC1
- 475              		.cfi_endproc
- 476              	.LFE63:
- 478              		.global	huart1
- 479              		.global	hi2c1
- 480              		.section	.bss.hi2c1,"aw",%nobits
- 481              		.align	2
- 482              		.set	.LANCHOR0,. + 0
- 485              	hi2c1:
- 486 0000 00000000 		.space	84
- 486      00000000 
- 486      00000000 
- 486      00000000 
- 486      00000000 
- 487              		.section	.bss.huart1,"aw",%nobits
- 488              		.align	2
- 489              		.set	.LANCHOR1,. + 0
- 492              	huart1:
- 493 0000 00000000 		.space	72
- 493      00000000 
- 493      00000000 
- 493      00000000 
- 493      00000000 
- 494              		.text
- 495              	.Letext0:
- 496              		.file 3 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
- 497              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 498              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 499              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
- 500              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
- 501              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 502              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h"
- 503              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 504              		.file 11 "Core/Inc/fonts.h"
- 505              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 506              		.file 13 "Core/Inc/ssd1306.h"
- 507              		.file 14 "<built-in>"
-ARM GAS  /tmp/ccxuAkrz.s 			page 18
+ 471              		.loc 1 115 9 discriminator 1 view .LVU128
+ 472 005e DFE7     		b	.L26
+ 473              	.L29:
+ 474              		.align	2
+ 475              	.L28:
+ 476 0060 00000000 		.word	Font_11x18
+ 477 0064 00000000 		.word	.LC0
+ 478 0068 04000000 		.word	.LC1
+ 479              		.cfi_endproc
+ 480              	.LFE63:
+ 482              		.global	huart1
+ 483              		.global	hi2c1
+ 484              		.section	.bss.hi2c1,"aw",%nobits
+ 485              		.align	2
+ 486              		.set	.LANCHOR0,. + 0
+ 489              	hi2c1:
+ 490 0000 00000000 		.space	84
+ 490      00000000 
+ 490      00000000 
+ 490      00000000 
+ 490      00000000 
+ 491              		.section	.bss.huart1,"aw",%nobits
+ 492              		.align	2
+ 493              		.set	.LANCHOR1,. + 0
+ 496              	huart1:
+ 497 0000 00000000 		.space	72
+ 497      00000000 
+ 497      00000000 
+ 497      00000000 
+ 497      00000000 
+ 498              		.text
+ 499              	.Letext0:
+ 500              		.file 3 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ 501              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 502              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 503              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 504              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 505              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 506              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h"
+ 507              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 508              		.file 11 "Core/Inc/fonts.h"
+ARM GAS  /tmp/ccIQ2kco.s 			page 18
+
+
+ 509              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 510              		.file 13 "Core/Inc/ssd1306.h"
+ 511              		.file 14 "<built-in>"
+ARM GAS  /tmp/ccIQ2kco.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccxuAkrz.s:16     .text.MX_GPIO_Init:0000000000000000 $t
-     /tmp/ccxuAkrz.s:23     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-     /tmp/ccxuAkrz.s:89     .text.MX_GPIO_Init:0000000000000040 $d
-     /tmp/ccxuAkrz.s:94     .text.Error_Handler:0000000000000000 $t
-     /tmp/ccxuAkrz.s:101    .text.Error_Handler:0000000000000000 Error_Handler
-     /tmp/ccxuAkrz.s:133    .text.MX_I2C1_Init:0000000000000000 $t
-     /tmp/ccxuAkrz.s:139    .text.MX_I2C1_Init:0000000000000000 MX_I2C1_Init
-     /tmp/ccxuAkrz.s:197    .text.MX_I2C1_Init:000000000000002c $d
-     /tmp/ccxuAkrz.s:204    .text.MX_USART1_UART_Init:0000000000000000 $t
-     /tmp/ccxuAkrz.s:210    .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
-     /tmp/ccxuAkrz.s:265    .text.MX_USART1_UART_Init:000000000000002c $d
-     /tmp/ccxuAkrz.s:271    .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccxuAkrz.s:278    .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccxuAkrz.s:383    .rodata.main.str1.4:0000000000000000 $d
-     /tmp/ccxuAkrz.s:390    .text.main:0000000000000000 $t
-     /tmp/ccxuAkrz.s:397    .text.main:0000000000000000 main
-     /tmp/ccxuAkrz.s:472    .text.main:000000000000005c $d
-     /tmp/ccxuAkrz.s:492    .bss.huart1:0000000000000000 huart1
-     /tmp/ccxuAkrz.s:485    .bss.hi2c1:0000000000000000 hi2c1
-     /tmp/ccxuAkrz.s:481    .bss.hi2c1:0000000000000000 $d
-     /tmp/ccxuAkrz.s:488    .bss.huart1:0000000000000000 $d
+     /tmp/ccIQ2kco.s:16     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/ccIQ2kco.s:23     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/ccIQ2kco.s:89     .text.MX_GPIO_Init:0000000000000040 $d
+     /tmp/ccIQ2kco.s:94     .text.Error_Handler:0000000000000000 $t
+     /tmp/ccIQ2kco.s:101    .text.Error_Handler:0000000000000000 Error_Handler
+     /tmp/ccIQ2kco.s:133    .text.MX_I2C1_Init:0000000000000000 $t
+     /tmp/ccIQ2kco.s:139    .text.MX_I2C1_Init:0000000000000000 MX_I2C1_Init
+     /tmp/ccIQ2kco.s:197    .text.MX_I2C1_Init:000000000000002c $d
+     /tmp/ccIQ2kco.s:204    .text.MX_USART1_UART_Init:0000000000000000 $t
+     /tmp/ccIQ2kco.s:210    .text.MX_USART1_UART_Init:0000000000000000 MX_USART1_UART_Init
+     /tmp/ccIQ2kco.s:265    .text.MX_USART1_UART_Init:000000000000002c $d
+     /tmp/ccIQ2kco.s:271    .text.SystemClock_Config:0000000000000000 $t
+     /tmp/ccIQ2kco.s:278    .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/ccIQ2kco.s:383    .rodata.main.str1.4:0000000000000000 $d
+     /tmp/ccIQ2kco.s:390    .text.main:0000000000000000 $t
+     /tmp/ccIQ2kco.s:397    .text.main:0000000000000000 main
+     /tmp/ccIQ2kco.s:476    .text.main:0000000000000060 $d
+     /tmp/ccIQ2kco.s:496    .bss.huart1:0000000000000000 huart1
+     /tmp/ccIQ2kco.s:489    .bss.hi2c1:0000000000000000 hi2c1
+     /tmp/ccIQ2kco.s:485    .bss.hi2c1:0000000000000000 $d
+     /tmp/ccIQ2kco.s:492    .bss.huart1:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Init
@@ -1050,10 +1058,10 @@ memset
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_Init
+HAL_Delay
 SSD1306_Init
 SSD1306_GotoXY
 SSD1306_Puts
 SSD1306_UpdateScreen
-HAL_Delay
 SSD1306_Clear
 Font_11x18
