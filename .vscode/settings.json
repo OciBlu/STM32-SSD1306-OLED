@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "_ansi.h": "c"
+        "_ansi.h": "c",
+        "ssd1306.h": "c"
     }
 }
