@@ -16,3 +16,8 @@ Contoh :
 Core/Src/fonts.c \
 
 Core/Src/ssd1306.c \
+
+## Bitmap Dsplay
+Bitmap Generator Png to Bitmap Script: https://javl.github.io/image2cpp/
+
+buat Header .h file > /Core/Inc/ bitmap.h
